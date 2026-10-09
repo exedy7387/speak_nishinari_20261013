@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>西成署_音声再生</title>
+        <link rel="stylesheet" href="./static/style.css" />
+
+        <!-- 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" /> -->
+    </head>
+    <body>
+        <header class="header" id="header">
+            <div id="company-logo">
+                <img src="./static/image/logo1.png" alt="neibo_logo" />
+            </div>
+            <div id="current-time"></div>
+            <div id="mode-badge">西成署</div>
+        </header>
+
+        <main id="mainContent">
+            <div class="button-container">
+
+                <div class="row row-2">
+                    <button class="play-button pos-1" data-label="1" data-media-id="a96dfb9b-76c4-466c-b7b3-e5810f1d8922">
+                        <span class="title">マルチ①</span>
+                    </button>
+                    <button class="play-button pos-2" data-label="2" data-media-id="3dea4215-faa6-4b11-bec4-4dff5338fb4a">
+                        <span class="title">マルチ②</span>
+                    </button>
+                    <button class="play-button pos-3" data-label="3" data-media-id="971d6e62-48e1-46fc-a09c-d8ecdc66696b">
+                        <span class="title">パワフル①</span>
+                    </button>
+                    <button class="play-button pos-4" data-label="4" data-media-id="7e9581f0-c9a3-41ba-8213-0dd5bf25b954">
+                        <span class="title">パワフル②</span>
+                    </button>
+                </div>
+                <div class="row row-2">
+                    <button class="play-button pos-5" data-label="5" data-media-id="565a5401-2731-4c91-8c03-ccc0799f63bd">
+                        <span class="title">パワフル③</span>
+                    </button>
+                    <button class="play-button pos-6" data-label="6" data-media-id="8eb5a453-40fa-42de-b72e-775e1b6abf8a">
+                        <span class="title">パワフル④</span>
+                    </button>
+                    <button class="play-button pos-7" data-label="7" data-media-id="2d5d998b-2fe4-4aed-8e54-067fd3f55081">
+                        <span class="title">マルチ③</span>
+                    </button>
+                    <button class="play-button pos-8" data-label="8" data-media-id="0effb79c-5c43-4527-baf1-f0fa163289ff">
+                        <span class="title">パワフル④-2</span>
+                    </button>
+                </div>
+                <div class="row row-2">
+                    <button class="play-button pos-9" data-label="9" data-media-id="31665cb0-9342-475b-8a2e-4ad9e234063b">
+                        <span class="title">マルチ④</span>
+                    </button>
+                    <button class="play-button sequence-button pos-10" data-label="sequence-5-8" aria-label="パワフル⑤-1からパワフル⑧まで順番に再生">
+                        <span class="title">パワフル⑤-1<br>〜パワフル⑧</span>
+                    </button>
+                    <button class="play-button pos-11" data-label="11" data-media-id="dcad9568-7152-40a2-8470-fb5fd6f82a78">
+                        <span class="title">マルチ⑨</span>
+                    </button>
+                </div>
+                <!-- <div class="row row-5">
+                    <button class="play-button pos-9" data-label="9" data-media-id="32252c70-5e5d-4217-8890-602982be1c18">
+                        <span class="title">⑨<br>マルチ</span>
+                    </button>
+                    <button class="play-button pos-10" data-label="10" data-media-id="84b18ec4-a655-4227-a4d9-9029c5454bb2">
+                        <span class="title">⑩<br>パワフル</span>
+                    </button>
+                    <button class="play-button pos-11" data-label="11" data-media-id="40a793d7-d201-4bf6-8c93-0f4d15f4c482">
+                        <span class="title">⑪<br>パワフル</span>
+                    </button>
+                    <button class="play-button pos-12" data-label="12" data-media-id="bb821d66-1a78-4edc-9035-f8f5b03298ba">
+                        <span class="title">⑫<br>マルチ</span>
+                    </button>
+
+                </div> -->
+                <!-- <div class="row row-1">
+                    <button class="play-button pos-last" data-label="最後の一言" data-media-id="48b737ee-a0e1-41e7-a9aa-32f0145459c4">
+                        <span class="title">最後の一言</span>
+                    </button>
+                </div> -->
+
+                <button class="stop-button pos-stop">再生停止</button>
+                <div class="mode-row">
+                    <button class="control-button mode-button pos-heart-eye" data-mode="heart_eye"><span class="title">目♥</span></button>
+                    <button class="control-button mode-button pos-normal" data-mode="normal"><span class="title">通常</span></button>
+                </div>
+            </div>
+        </main>
+
+        <div id="mediaConfigPopup" class="popup-overlay" style="display: none">
+            <div class="popup-panel">
+                <h2>メディア設定</h2>
+                <div id="mediaConfigList" class="popup-list"></div>
+
+                <div class="popup-actions">
+                    <button id="mediaConfigCancel" class="popup-btn">キャンセル</button>
+                    <button id="mediaConfigSave" class="popup-btn primary">保存</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="./static/module/api.js"></script>
+        <script src="./static/module/function.js"></script>
+        <script src="./static/script.js"></script>
+    </body>
+</html>
